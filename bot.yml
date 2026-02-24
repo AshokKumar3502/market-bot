@@ -1,0 +1,6 @@
+env:
+  API_KEY: ${{ secrets.API_KEY }}
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+  CHAT_IDS: ${{ secrets.CHAT_IDS }}
+  CHART_ID: ${{ secrets.CHART_ID }}
