@@ -1,14 +1,9 @@
 import requests
 from datetime import datetime
 
-# 🔐 Replace with your real bot token
-TELEGRAM_BOT_TOKEN = "8539235085:AAH64vStKl89iWFVhJ06rvp4arsC7of51Bk"
-
-# Add your personal + channel IDs
-CHAT_IDS = [
-    "1336874504",
-    "-1003655311849"
-]
+API_KEY = os.environ["API_KEY"]
+ACCESS_TOKEN = os.environ["ACCESS_TOKEN"]
+TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 
 def send_test_message():
 
