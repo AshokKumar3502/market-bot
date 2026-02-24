@@ -1,0 +1,37 @@
+import requests
+from datetime import datetime
+
+# 🔐 Replace with your real bot token
+TELEGRAM_BOT_TOKEN = "8539235085:AAH64vStKl89iWFVhJ06rvp4arsC7of51Bk"
+
+# Add your personal + channel IDs
+CHAT_IDS = [
+    "1336874504",
+    "-1003655311849"
+]
+
+def send_test_message():
+
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+
+    message = f"""
+━━━━━━━━━━━━━━━━━━
+🤖 Bot Activated & Connected ✅
+🔗 Status: Online
+🕒 Time: {datetime.now().strftime('%H:%M:%S')} IST
+━━━━━━━━━━━━━━━━━━
+"""
+
+    for chat_id in CHAT_IDS:
+        response = requests.post(url, data={
+            "chat_id": chat_id,
+            "text": message
+        })
+
+        if response.status_code == 200:
+            print(f"✅ Sent to {chat_id}")
+        else:
+            print(f"❌ Failed for {chat_id}", response.text)
+
+# Run test
+send_test_message()
